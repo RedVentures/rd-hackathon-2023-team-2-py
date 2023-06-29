@@ -29,13 +29,18 @@ class App:
         password_generator.pack()
 
     def generate_password(self):
-        characters = string.ascii_letters + string.punctuation + string.digits
-        password = ""
+        all_the_characters_to_use = string.ascii_letters
+        all_the_characters_to_use = all_the_characters_to_use + string.punctuation
+        all_the_characters_to_use = all_the_characters_to_use + string.digits
+        return_password = ""
         for x in range(28):
-            password+=choice(characters)
+            return_password = return_password + choice(all_the_characters_to_use)
         self.password_entry.delete(0, END)
         self.password_entry.insert(0, password)
-        
+
+def main():
+    print "this is old print style, and not gonna be used"
+
 #display
 app = App()
 app.window.mainloop()
